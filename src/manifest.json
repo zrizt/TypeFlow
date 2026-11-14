@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "TypeFlow — Smart Text Input & Typing Assistant",
+  "short_name": "TypeFlow",
+  "version": "1.1.1",
+  "description": "Insert or type prewritten text into textareas, inputs and editable fields. Everything stays on your device.",
+  "minimum_chrome_version": "110",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "action": {
+    "default_title": "TypeFlow — Smart Text Input",
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

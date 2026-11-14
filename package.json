@@ -1,0 +1,29 @@
+{
+  "name": "typeflow",
+  "version": "1.1.1",
+  "private": true,
+  "description": "TypeFlow — browser extension that inserts or types prewritten text into web forms.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "icons": "node scripts/generate-icons.mjs",
+    "package": "node scripts/build.mjs && node scripts/package.mjs",
+    "e2e": "node scripts/build.mjs && node scripts/e2e.mjs",
+    "verify": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^40.1.0",
+    "@types/chrome": "^0.3.7",
+    "esbuild": "^0.28.2",
+    "jsdom": "^26.1.0",
+    "playwright-core": "^1.65.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
